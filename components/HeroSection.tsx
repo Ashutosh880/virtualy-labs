@@ -46,10 +46,10 @@ const trustPoints = [
 
 // Floating decoration shapes
 const floatingElements = [
-  { size: 320, x: '72%', y: '-8%', opacity: 0.45, blur: 80, color: '#bfdbfe' },   // blue-200
-  { size: 260, x: '-6%', y: '60%', opacity: 0.35, blur: 70, color: '#e0f2fe' },   // sky-100
-  { size: 180, x: '88%', y: '55%', opacity: 0.3, blur: 60, color: '#cffafe' },    // cyan-100
-  { size: 140, x: '40%', y: '80%', opacity: 0.25, blur: 50, color: '#dbeafe' },   // blue-100
+  { size: 320, x: '60%', y: '-8%', opacity: 0.45, blur: 80, color: '#bfdbfe' },
+  { size: 260, x: '-6%', y: '60%', opacity: 0.35, blur: 70, color: '#e0f2fe' },
+  { size: 180, x: '80%', y: '55%', opacity: 0.3, blur: 60, color: '#cffafe' },
+  { size: 140, x: '40%', y: '80%', opacity: 0.25, blur: 50, color: '#dbeafe' },
 ];
 
 export default function HeroSection() {
@@ -61,16 +61,17 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden w-full max-w-full"
       style={{
         background: 'linear-gradient(150deg, #ffffff 0%, #f0f7ff 35%, #e8f4fd 65%, #f5f9ff 100%)',
       }}
     >
-      {/* Soft ambient glow blobs */}
+      {/* Soft ambient glow blobs — clipped to viewport */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {floatingElements.map((el, i) => (
         <div
           key={i}
-          className="absolute rounded-full pointer-events-none"
+            className="absolute rounded-full"
           style={{
             width: el.size,
             height: el.size,
@@ -82,10 +83,11 @@ export default function HeroSection() {
           }}
         />
       ))}
+      </div>
 
       {/* Subtle dot grid */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
         style={{
           backgroundImage: `radial-gradient(circle, #94a3b8 1px, transparent 1px)`,
           backgroundSize: '36px 36px',
@@ -93,7 +95,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* World map faint outline — SVG paths approximation using circles */}
+      {/* World map + floating icons wrapper — clipped */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
           viewBox="0 0 1400 700"
@@ -148,8 +150,8 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-36 pb-24 md:pt-44 md:pb-28">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-44 md:pb-28">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left column */}
           <div>
@@ -234,12 +236,12 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right column — glassmorphism service cards */}
+          {/* Right column — glassmorphism service cards (hidden on mobile) */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.25 }}
-            className="grid grid-cols-2 gap-4"
+            className="hidden lg:grid grid-cols-2 gap-4"
           >
             {glassCards.map(({ icon: Icon, label, desc, color, iconColor, border }, i) => (
               <motion.div

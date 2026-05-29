@@ -14,9 +14,9 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <div style={{ overflowX: 'hidden', maxWidth: '100vw', width: '100%' }}>
       <Navbar />
-      <main>
+      <main style={{ overflowX: 'hidden', width: '100%' }}>
         <HeroSection />
         <AboutSection />
         <WhyUsSection />
@@ -30,6 +30,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

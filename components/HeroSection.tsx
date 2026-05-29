@@ -148,7 +148,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-28 pb-24 md:pt-32 md:pb-28">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-36 pb-24 md:pt-44 md:pb-28">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left column */}
@@ -169,15 +169,16 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-bold text-[#0f172a] leading-[1.1] tracking-tight mb-6"
             >
+              Engineering Ideas Into{' '}
               <span
-                className="block bg-gradient-to-r from-slate-900 via-sky-600 to-cyan-500 bg-clip-text text-transparent"
-              >
-                Engineering Ideas Into
-              </span>
-              <span
-                className="block bg-gradient-to-r from-[#2563eb] via-[#38bdf8] to-[#0ea5e9] bg-clip-text text-transparent"
+                style={{
+                  background: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
               >
                 Reliable Digital Products
               </span>

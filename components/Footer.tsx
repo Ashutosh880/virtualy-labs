@@ -1,7 +1,7 @@
 'use client';
 
-import { Code2, Linkedin, Twitter, Github, ArrowUp } from 'lucide-react';
-
+import { Linkedin, Twitter, Github, ArrowUp } from 'lucide-react';
+import Image from 'next/image';
 const footerLinks = {
   Services: [
     'Product Architecture',
@@ -66,13 +66,14 @@ export default function Footer() {
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563b0] to-[#0ea5c8] flex items-center justify-center">
-                <Code2 className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-white font-bold text-xl">
-                Virtualy<span className="text-[#0ea5c8]"> Solution</span>
-              </span>
+            <div className="flex items-center mb-5">
+              <Image
+              src="/logo1.png"
+              alt="Virtualy Labs"
+              height={80}
+              width={80}
+              className="-mt-9 h-24 w-auto object-contain brightness-0 invert"
+            />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6 max-w-xs">
               Engineering Digital Products for the Future. A multidisciplinary technology team delivering enterprise-grade software solutions worldwide.

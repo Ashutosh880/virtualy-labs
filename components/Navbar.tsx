@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -35,36 +36,25 @@ export default function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? 'bg-white/90 backdrop-blur-md shadow-sm shadow-slate-200/80 border-b border-slate-200/60'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 h-20 flex items-center justify-between">
-          {/* Wordmark only — no icon logo */}
+          {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => { e.preventDefault(); handleNav('#hero'); }}
             className="flex items-center group"
           >
-            <span
-              className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
-                scrolled ? 'text-[#0f172a]' : 'text-[#0f172a]'
-              }`}
-            >
-              Virtualy
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #2563eb, #0ea5e9)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                {' '}Labs
-              </span>
-            </span>
+            <Image
+              src="/logo1.png"
+              alt="Virtualy Labs"
+              height={80}
+              width={80}
+              className="h-24 w-auto"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -87,8 +77,8 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); handleNav('#contact'); }}
-              className="px-5 py-2.5 text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-400/25 hover:-translate-y-0.5 transition-all duration-200"
-              style={{ background: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)' }}
+              className="px-6 py-3 text-white text-sm font-semibold rounded-full hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0ea5e9 100%)' }}
             >
               Schedule Consultation
             </a>
@@ -129,8 +119,8 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); handleNav('#contact'); }}
-                className="mt-4 px-6 py-4 text-white text-lg font-semibold rounded-xl text-center"
-                style={{ background: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)' }}
+                className="mt-4 px-6 py-4 text-white text-lg font-semibold rounded-2xl text-center"
+                style={{ background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #0ea5e9 100%)' }}
               >
                 Schedule Consultation
               </a>

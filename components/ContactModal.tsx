@@ -445,17 +445,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     Get In Touch
                   </span>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#040d1a] mb-4 leading-tight">
-                    Let&apos;s Build Something{' '}
-                    <span
-                      style={{
-                        background: 'linear-gradient(135deg, #2563eb, #0ea5e9)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                      }}
-                    >
-                      Exceptional
-                    </span>
+                    Let's Turn Your Vision {' '}
+                    <span className="text-gradient">Into Software</span>
                   </h2>
                   <p className="text-slate-600 text-sm leading-relaxed mb-8">
                     Tell us about your project and we&apos;ll schedule a free consultation to explore how we can help you build, scale, or transform your digital product.
@@ -463,21 +454,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                   <div className="space-y-5">
                     {[
-                      {
-                        icon: CalendarCheck,
-                        title: 'Free 60-Minute Consultation',
-                        desc: 'No commitment. We explore your needs, share our thinking, and outline a realistic path forward.',
-                      },
-                      {
-                        icon: Mail,
-                        title: 'Quick Response',
-                        desc: 'All inquiries are reviewed and responded to within 24 business hours.',
-                      },
-                      {
-                        icon: Phone,
-                        title: 'Engagement Flexibility',
-                        desc: 'Fixed price, time & material, or dedicated team — we adapt to what works for your business.',
-                      },
+                      { icon: CalendarCheck, title: 'Discovery Call', desc: 'Understand your goals, technical requirements, challenges, and possible implementation approach.' },
+                      { icon: Mail, title: 'Fast Response', desc: 'Most inquiries receive an initial response within one business day.' },
+                      { icon: Phone, title: 'Flexible Engagement Models', desc: 'Project-based delivery, dedicated teams, consulting, or architecture guidance tailored to your needs.' },
                     ].map(({ icon: Icon, title, desc }) => (
                       <div key={title} className="flex items-start gap-3">
                         <div className="w-9 h-9 rounded-xl bg-white border border-[#2563b0]/15 flex items-center justify-center flex-shrink-0 shadow-sm">

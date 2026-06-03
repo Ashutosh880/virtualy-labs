@@ -1,115 +1,159 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Droplets, Heart, Scan, Salad } from 'lucide-react';
+import { Droplets, Heart, CheckCircle2, ArrowRight, Salad, Scan } from 'lucide-react';
 
-const projects = [
+const caseStudies = [
   {
     icon: Droplets,
+    category: 'Marketing Technology Platform',
     name: 'FreeLiquid',
     tagline: 'Smart Area-Based Water Bottle Marketing & Lead Generation Platform',
-    description:
-      'An innovative SaaS platform that bridges offline marketing and digital lead generation through location-based branded water bottle campaigns. Businesses launch targeted campaigns in specific geographic areas, distribute customized water bottles with QR codes, and generate qualified leads through consumer engagement.',
-    capabilities: [
+    challenge:
+      'Businesses struggled to generate measurable local leads through traditional offline advertising channels. Existing marketing campaigns lacked real-time engagement tracking and verified lead collection.',
+    solution:
+      'Virtualy Labs designed and developed FreeLiquid, a SaaS platform that connects businesses, distributors, water suppliers, and consumers through QR-enabled branded water bottle campaigns. The platform enables businesses to launch area-specific marketing campaigns, manage distribution, track engagement, generate qualified leads, and monitor campaign performance from a centralized dashboard.',
+    impact:
+      'Created a measurable bridge between offline advertising and digital lead generation while improving campaign visibility and lead quality.',
+    features: [
       'Campaign Management',
-      'QR-Based Lead Generation',
-      'Area-Wise Targeting',
+      'Area-Based Targeting',
+      'QR-Based Lead Capture',
+      'Distribution Planning',
       'Analytics Dashboard',
       'Supplier Management',
-      'Distribution Planning',
-      'Real-Time Reporting',
+      'Performance Tracking',
     ],
-    tech: ['Java', 'Spring Boot', 'React.js', 'MongoDB', 'REST APIs', 'Cloud Infrastructure'],
-    color: 'from-blue-600/10 to-sky-400/10',
-    border: 'border-blue-100',
-    accent: 'text-blue-600',
-    badgeBg: 'bg-blue-50 text-blue-700 border-blue-200',
-    image: 'https://images.pexels.com/photos/1000084/pexels-photo-1000084.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tech: ['Java', 'Spring Boot', 'React.js', 'MongoDB', 'Cloud Infrastructure'],
+    image: 'https://images.pexels.com/photos/1000084/pexels-photo-1000084.jpeg?auto=compress&cs=tinysrgb&w=900',
+    accent: '#2563eb',
+    accentLight: 'rgba(37,99,235,0.08)',
+    accentBorder: 'rgba(37,99,235,0.2)',
+    tagBg: 'bg-blue-50 text-blue-700 border-blue-200',
+    catColor: 'text-blue-600',
   },
   {
     icon: Heart,
+    category: 'Healthcare Management Platform',
     name: 'CareSphere',
     tagline: 'Digital Senior Care & Assessment Management Platform',
-    description:
-      'A comprehensive multi-tenant healthcare management platform designed to streamline senior care operations, resident onboarding, caregiver coordination, digital assessments, compliance tracking, and healthcare analytics. Built to meet stringent healthcare data standards.',
-    capabilities: [
-      'Multi-Tenant Healthcare Management',
-      'Resident Onboarding',
-      'Caregiver Management',
-      'Assessment Scheduling',
-      'Healthcare Analytics',
-      'Secure Reporting',
+    challenge:
+      'Healthcare organizations relied on fragmented processes for resident onboarding, caregiver coordination, assessments, and reporting, creating inefficiencies and compliance challenges.',
+    solution:
+      'Virtualy Labs built CareSphere, a secure multi-tenant healthcare platform that digitizes resident management, caregiver assignments, assessment workflows, communication, and operational reporting. The platform enables healthcare organizations to manage senior care operations through a centralized digital ecosystem.',
+    impact:
+      'Improved operational efficiency, enhanced resident engagement, streamlined assessments, and provided healthcare organizations with real-time visibility into care operations.',
+    features: [
+      'Multi-Tenant Architecture',
+      'Resident Management',
+      'Caregiver Assignment',
+      'Digital Assessments',
+      'Analytics & Reporting',
+      'Role-Based Access Control',
       'Compliance Monitoring',
     ],
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS', 'JWT Authentication', 'Cloud Services'],
-    color: 'from-teal-600/10 to-green-400/10',
-    border: 'border-teal-100',
-    accent: 'text-teal-600',
-    badgeBg: 'bg-teal-50 text-teal-700 border-teal-200',
-    image: 'https://images.pexels.com/photos/3844581/pexels-photo-3844581.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS', 'JWT Authentication'],
+    image: 'https://images.pexels.com/photos/3844581/pexels-photo-3844581.jpeg?auto=compress&cs=tinysrgb&w=900',
+    accent: '#0d9488',
+    accentLight: 'rgba(13,148,136,0.08)',
+    accentBorder: 'rgba(13,148,136,0.2)',
+    tagBg: 'bg-teal-50 text-teal-700 border-teal-200',
+    catColor: 'text-teal-600',
   },
   {
     icon: Scan,
+    category: 'AI Healthcare Platform',
     name: 'AI Skin Analysis Platform',
     tagline: 'Computer Vision-Based Skin Health Assessment',
-    description:
-      'A comprehensive skin analysis platform using computer vision and machine learning to provide personalized skincare recommendations, progress tracking, and health insights. Custom facial analysis algorithms deliver explainable AI-driven results in real time.',
-    capabilities: [
+
+    challenge:
+      'Users often struggle to access accurate and personalized skin health assessments without visiting specialists. Existing solutions lacked real-time analysis, explainable recommendations, and progress tracking.',
+
+    solution:
+      'Virtualy Labs developed an AI-powered skin analysis platform leveraging computer vision and machine learning to assess skin conditions, calculate skin age, generate personalized skincare recommendations, and monitor user progress over time. The platform delivers real-time insights through custom facial analysis algorithms and explainable AI models.',
+
+    impact:
+      'Enabled automated skin assessments, improved user engagement through personalized recommendations, and reduced dependency on manual consultations by providing instant AI-driven insights.',
+
+    features: [
       'Real-time Skin Analysis',
       'Skin Age Calculation',
       'Personalized Recommendations',
       'Progress Tracking',
-      'Admin Analytics',
-      'Explainable AI',
+      'Admin Analytics Dashboard',
+      'Explainable AI Insights',
     ],
-    tech: ['React', 'Python', 'DLib', 'OpenCV', 'FastAPI', 'AWS'],
-    highlights: [
-      'Custom facial analysis algorithms',
-      'Real-time image processing pipelines',
-      'Recommendation engine with explainable AI',
-      'Comprehensive progress tracking system',
+
+    tech: [
+      'React.js',
+      'Python',
+      'DLib',
+      'OpenCV',
+      'FastAPI',
+      'AWS',
     ],
-    color: 'from-rose-600/10 to-orange-400/10',
-    border: 'border-rose-100',
-    accent: 'text-rose-600',
-    badgeBg: 'bg-rose-50 text-rose-700 border-rose-200',
-    image: 'https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+    image:
+      'https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+    accent: '#e11d48',
+    accentLight: 'rgba(225,29,72,0.08)',
+    accentBorder: 'rgba(225,29,72,0.2)',
+
+    tagBg: 'bg-rose-50 text-rose-700 border-rose-200',
+    catColor: 'text-rose-600',
   },
   {
     icon: Salad,
+    category: 'AI Health & Wellness Platform',
     name: 'AI-Powered Nutrition Tracker',
     tagline: 'Computer Vision-Based Calorie Estimation Application',
-    description:
-      'An intelligent nutrition tracking application that leverages machine learning and computer vision to automatically estimate calorie content from food images, providing users with accurate nutritional insights and personalized dietary guidance.',
-    capabilities: [
-      'Image Recognition',
-      'Calorie Estimation',
-      'Food Database',
+
+    challenge:
+      'Tracking daily nutrition manually is time-consuming and often inaccurate. Users needed a simple way to understand calorie intake and nutritional value without extensive data entry.',
+
+    solution:
+      'Virtualy Labs built an AI-powered nutrition tracking platform that uses computer vision and machine learning to identify food items from images, estimate calorie content, and provide personalized nutritional insights. The platform combines image recognition, custom ML models, and dietary analytics to simplify healthy lifestyle management.',
+
+    impact:
+      'Improved user engagement with nutrition tracking, reduced manual effort, and delivered fast, data-driven dietary insights through intelligent food recognition.',
+
+    features: [
+      'Food Image Recognition',
+      'Automatic Calorie Estimation',
+      'Comprehensive Food Database',
       'Dietary Tracking',
-      'Custom ML Models',
+      'Custom Machine Learning Models',
       'Progress Analytics',
     ],
-    tech: ['React', 'Python', 'TensorFlow', 'OpenCV', 'FastAPI', 'AWS'],
-    highlights: [
-      'Custom computer vision models',
-      'Efficient image processing pipelines',
-      'Scalable ML inference infrastructure',
-      'Intuitive nutrition tracking UI',
+
+    tech: [
+      'React.js',
+      'Python',
+      'TensorFlow',
+      'OpenCV',
+      'FastAPI',
+      'AWS',
     ],
-    color: 'from-green-600/10 to-emerald-400/10',
-    border: 'border-green-100',
-    accent: 'text-green-600',
-    badgeBg: 'bg-green-50 text-green-700 border-green-200',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+    image:
+      'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',
+
+    accent: '#16a34a',
+    accentLight: 'rgba(22,163,74,0.08)',
+    accentBorder: 'rgba(22,163,74,0.2)',
+
+    tagBg: 'bg-green-50 text-green-700 border-green-200',
+    catColor: 'text-green-600',
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section-padding bg-white">
-      <div className="container-max">
+    <section id="projects" className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 bg-white overflow-x-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -118,97 +162,139 @@ export default function ProjectsSection() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2563b0]/8 text-[#2563b0] text-sm font-semibold mb-5 border border-[#2563b0]/15">
             Featured Projects
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#040d1a] mb-5 leading-tight">
-            Products We've{' '}
-            <span className="text-gradient">Built & Delivered</span>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#040d1a] mb-5 leading-tight">
+            Products We&apos;ve{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #2563eb, #0ea5e9)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Built & Delivered
+            </span>
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
             Real-world digital products engineered for scale, usability, and measurable business impact.
           </p>
         </motion.div>
 
-        <div className="space-y-10">
-          {projects.map((project, i) => {
-            const { icon: Icon, name, tagline, description, capabilities, tech, color, border, accent, badgeBg, image } = project;
-            return (
-            <motion.div
-              key={name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              className={`rounded-3xl border ${border} overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300`}
-            >
-              <div className={`grid lg:grid-cols-2 bg-gradient-to-br ${color}`}>
-                {/* Content */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center`}>
-                      <Icon className={`w-6 h-6 ${accent}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#040d1a]">{name}</h3>
-                      <p className={`text-sm font-medium ${accent}`}>{tagline}</p>
-                    </div>
+        <div className="space-y-12">
+          {caseStudies.map(
+            (
+              { icon: Icon, category, name, tagline, challenge, solution, impact, features, tech, image, accent, accentLight, accentBorder, tagBg, catColor },
+              i
+            ) => (
+              <motion.div
+                key={name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.65 }}
+                className="rounded-3xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-400"
+              >
+                {/* Top bar */}
+                <div
+                  className="px-8 py-4 flex items-center gap-3 border-b border-slate-100"
+                  style={{ background: accentLight }}
+                >
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center shadow-sm flex-shrink-0"
+                    style={{ background: accent }}
+                  >
+                    <Icon className="w-4 h-4 text-white" />
                   </div>
+                  <div>
+                    <span className={`text-xs font-semibold uppercase tracking-widest ${catColor}`}>{category}</span>
+                    <div className="text-base font-bold text-[#040d1a] leading-tight">{name}</div>
+                  </div>
+                </div>
 
-                  <p className="text-slate-600 leading-relaxed mb-8">{description}</p>
+                <div className="grid lg:grid-cols-5">
+                  {/* Left: content — takes 3 cols */}
+                  <div className="lg:col-span-3 p-8 lg:p-10">
+                    <p className={`text-sm font-semibold mb-8 ${catColor}`}>{tagline}</p>
 
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold text-[#040d1a] mb-4 uppercase tracking-wide">Key Capabilities</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {capabilities.map((c) => (
-                        <div key={c} className="flex items-center gap-2 text-sm text-slate-600">
-                          <span className={`w-1.5 h-1.5 rounded-full ${accent.replace('text-', 'bg-')} flex-shrink-0`} />
-                          {c}
+                    <div className="space-y-7">
+                      {/* Challenge */}
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Challenge</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">{challenge}</p>
+                      </div>
+
+                      {/* Solution */}
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Solution</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">{solution}</p>
+                      </div>
+
+                      {/* Business Impact */}
+                      <div
+                        className="p-4 rounded-xl"
+                        style={{ background: accentLight, borderLeft: `3px solid ${accent}` }}
+                      >
+                        <h4 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: accent }}>
+                          Business Impact
+                        </h4>
+                        <p className="text-slate-700 text-sm leading-relaxed">{impact}</p>
+                      </div>
+
+                      {/* Tech */}
+                      <div>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Technology</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {tech.map((t) => (
+                            <span key={t} className={`text-xs px-3 py-1.5 rounded-lg border font-medium ${tagBg}`}>
+                              {t}
+                            </span>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {'highlights' in project && project.highlights && (
-                    <div className="mb-8">
-                      <h4 className="text-sm font-semibold text-[#040d1a] mb-4 uppercase tracking-wide">Technical Highlights</h4>
-                      <div className="space-y-2">
-                        {project.highlights.map((h: string) => (
-                          <div key={h} className="flex items-center gap-2 text-sm text-slate-600">
-                            <span className="text-[#0ea5c8]">★</span>
-                            {h}
-                          </div>
-                        ))}
                       </div>
                     </div>
-                  )}
+                  </div>
 
-                  <div>
-                    <h4 className="text-sm font-semibold text-[#040d1a] mb-3 uppercase tracking-wide">Technology</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {tech.map((t) => (
-                        <span key={t} className={`text-xs px-3 py-1 rounded-lg border font-medium ${badgeBg}`}>{t}</span>
-                      ))}
+                  {/* Right: features + image — takes 2 cols */}
+                  <div className="lg:col-span-2 flex flex-col">
+                    {/* Features */}
+                    <div className="p-8 lg:p-10 bg-slate-50/70 flex-1">
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5">Key Features</h4>
+                      <ul className="space-y-3">
+                        {features.map((f) => (
+                          <li key={f} className="flex items-start gap-3 text-sm text-slate-700">
+                            <CheckCircle2
+                              className="w-4 h-4 flex-shrink-0 mt-0.5"
+                              style={{ color: accent }}
+                            />
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Image */}
+                    <div className="relative h-52 lg:h-48 overflow-hidden">
+                      <img
+                        src={image}
+                        alt={name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute bottom-4 left-6">
+                        <span
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white"
+                          style={{ background: accent }}
+                        >
+                          Case Study
+                          <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Image */}
-                <div className={`relative h-64 lg:h-auto ${i % 2 === 1 ? 'lg:order-first' : ''}`}>
-                  <img
-                    src={image}
-                    alt={name}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  <div className="absolute bottom-6 right-6">
-                    <span className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-xl text-sm font-semibold text-[#040d1a] shadow-sm flex items-center gap-1.5">
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      Case Study
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            );
-          })}
+              </motion.div>
+            )
+          )}
         </div>
       </div>
     </section>

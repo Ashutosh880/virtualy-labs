@@ -8,96 +8,122 @@ const steps = [
     icon: Search,
     number: '01',
     title: 'Discovery & Consultation',
-    description: 'We start by deeply understanding your business goals, technical requirements, existing systems, and success criteria before writing a single line of code.',
+    desc: 'Understanding goals, challenges, and requirements.',
+    color: 'from-blue-500 to-sky-400',
   },
   {
     icon: Layers,
     number: '02',
-    title: 'Solution Architecture',
-    description: 'Our architects design a robust, scalable technical blueprint — selecting the right technologies, infrastructure, and patterns to match your long-term vision.',
+    title: 'Architecture & Planning',
+    desc: 'Designing scalable technical solutions and delivery strategy.',
+    color: 'from-sky-500 to-cyan-400',
   },
   {
     icon: Palette,
     number: '03',
-    title: 'Design & Planning',
-    description: 'We craft intuitive user experiences and build detailed delivery plans with sprint timelines, milestones, and clear communication cadences.',
+    title: 'Design & Validation',
+    desc: 'Creating user experiences and validating workflows.',
+    color: 'from-teal-500 to-emerald-400',
   },
   {
     icon: Code2,
     number: '04',
-    title: 'Development & Integration',
-    description: 'Engineering teams execute in focused sprints, integrating APIs, services, and third-party systems with full visibility at every stage.',
+    title: 'Development',
+    desc: 'Building secure, scalable, and maintainable systems.',
+    color: 'from-slate-600 to-slate-400',
   },
   {
     icon: TestTube2,
     number: '05',
-    title: 'Testing & Quality Assurance',
-    description: 'Comprehensive automated and manual testing ensures your product performs reliably, securely, and exactly to specification before release.',
+    title: 'Quality Assurance',
+    desc: 'Testing functionality, performance, and reliability.',
+    color: 'from-orange-500 to-amber-400',
   },
   {
     icon: Rocket,
     number: '06',
     title: 'Deployment & Support',
-    description: 'We manage production deployment, monitor live systems, and provide ongoing support so your product continues to evolve and scale.',
+    desc: 'Launching solutions and providing ongoing support.',
+    color: 'from-rose-500 to-pink-400',
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="section-padding bg-white">
-      <div className="container-max">
+    <section id="process" className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 bg-white overflow-x-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2563b0]/8 text-[#2563b0] text-sm font-semibold mb-5 border border-[#2563b0]/15">
-            How We Work
+            Our Process
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#040d1a] mb-5 leading-tight">
-            A Delivery Process Built for{' '}
-            <span className="text-gradient">Predictable Success</span>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#040d1a] mb-5 leading-tight">
+            How We Deliver{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #2563eb, #0ea5e9)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Successful Projects
+            </span>
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
             Six structured phases that take your idea from concept to production with clarity and confidence.
           </p>
         </motion.div>
 
+        {/* Timeline */}
         <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#2563b0]/20 to-transparent" />
+          {/* Vertical line — desktop only */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-200 to-transparent -translate-x-1/2" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {steps.map(({ icon: Icon, number, title, description }, i) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="relative group"
-              >
-                {/* Step number badge */}
-                <div className="relative z-10 flex items-center gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2563b0] to-[#0ea5c8] flex items-center justify-center shadow-lg shadow-[#2563b0]/20 flex-shrink-0">
-                    <Icon className="w-6 h-6 text-white" />
+          <div className="space-y-8 lg:space-y-0">
+            {steps.map(({ icon: Icon, number, title, desc, color }, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  className={`relative lg:flex lg:items-center lg:gap-12 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} mb-0 lg:mb-10`}
+                >
+                  {/* Card */}
+                  <div className={`lg:w-[calc(50%-3rem)] w-full ${isLeft ? 'lg:text-right' : 'lg:text-left'}`}>
+                    <div
+                      className={`group p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${isLeft ? 'lg:ml-auto' : ''}`}
+                      style={{ maxWidth: '100%' }}
+                    >
+                      <div className={`flex items-center gap-4 mb-4 ${isLeft ? 'lg:flex-row-reverse' : 'flex-row'}`}>
+                        <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center shadow-sm flex-shrink-0`}>
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <span className="text-4xl font-black text-slate-100 leading-none select-none">{number}</span>
+                      </div>
+                      <h3 className="text-base font-bold text-[#040d1a] mb-2">{title}</h3>
+                      <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
+                    </div>
                   </div>
-                  <span className="text-4xl font-bold text-slate-100 group-hover:text-[#2563b0]/20 transition-colors duration-300 select-none">
-                    {number}
-                  </span>
-                </div>
 
-                <h3 className="text-lg font-semibold text-[#040d1a] mb-3">{title}</h3>
-                <p className="text-slate-500 leading-relaxed text-sm">{description}</p>
+                  {/* Center dot — desktop only */}
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-white border-2 border-[#2563eb] shadow-md items-center justify-center flex-shrink-0 z-10">
+                    <div className="w-2 h-2 rounded-full bg-[#2563eb]" />
+                  </div>
 
-                {/* Arrow for large screens */}
-                {i < steps.length - 1 && (i + 1) % 3 !== 0 && (
-                  <div className="hidden lg:block absolute -right-4 top-7 text-[#2563b0]/30 text-xl">→</div>
-                )}
-              </motion.div>
-            ))}
+                  {/* Spacer for the other side */}
+                  <div className="hidden lg:block lg:w-[calc(50%-3rem)]" />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

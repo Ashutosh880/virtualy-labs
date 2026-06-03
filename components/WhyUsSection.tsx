@@ -1,89 +1,110 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Layers, Users, Zap, ShieldCheck, Cloud, Brain, Handshake, PackageCheck } from 'lucide-react';
+import { Layers, Target, Cpu, Globe, PackageCheck, Handshake } from 'lucide-react';
 
 const reasons = [
   {
     icon: Layers,
-    title: 'Strong Technical Architecture',
-    description: 'We design systems built to last — scalable, maintainable, and aligned with industry best practices from day one.',
+    title: 'Architecture First',
+    desc: 'We invest time in understanding business requirements and designing scalable solutions before development begins.',
+    number: '01',
+    color: 'from-blue-500 to-sky-400',
   },
   {
-    icon: Users,
-    title: 'Dedicated Development Teams',
-    description: 'You get focused teams that are fully immersed in your product, not split across dozens of projects.',
+    icon: Target,
+    title: 'Business-Focused Delivery',
+    desc: 'Every decision is aligned with business goals, user experience, scalability, and long-term value.',
+    number: '02',
+    color: 'from-teal-500 to-emerald-400',
   },
   {
-    icon: Zap,
-    title: 'Agile Delivery Process',
-    description: 'Iterative sprints, frequent releases, and full transparency keep your project moving and stakeholders informed.',
+    icon: Cpu,
+    title: 'AI-Ready Engineering',
+    desc: 'We build modern systems prepared for AI integration, automation, and future innovation.',
+    number: '03',
+    color: 'from-sky-500 to-cyan-400',
   },
   {
-    icon: ShieldCheck,
-    title: 'Enterprise Security Standards',
-    description: 'We build with security-first thinking — encryption, compliance, and best-practice access controls are non-negotiable.',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud-Native Development',
-    description: 'Our solutions are architected for the cloud from the ground up, ensuring elastic scale and high availability.',
-  },
-  {
-    icon: Brain,
-    title: 'AI-Driven Innovation',
-    description: 'We integrate intelligent automation, LLMs, and AI agents to give your product a competitive edge.',
-  },
-  {
-    icon: Handshake,
-    title: 'Long-Term Technology Partnership',
-    description: "We're not a vendor — we're a partner invested in your product's long-term success and evolution.",
+    icon: Globe,
+    title: 'Global Collaboration',
+    desc: 'Our distributed team works effectively across multiple time zones and international markets.',
+    number: '04',
+    color: 'from-slate-600 to-slate-400',
   },
   {
     icon: PackageCheck,
-    title: 'End-to-End Product Ownership',
-    description: 'From discovery through deployment and beyond, we own the entire product lifecycle with accountability.',
+    title: 'Full Lifecycle Ownership',
+    desc: 'From discovery to deployment and support, we remain involved throughout the product journey.',
+    number: '05',
+    color: 'from-orange-500 to-amber-400',
+  },
+  {
+    icon: Handshake,
+    title: 'Flexible Engagement Models',
+    desc: 'Dedicated teams, consulting, project-based delivery, or long-term technology partnerships.',
+    number: '06',
+    color: 'from-rose-500 to-pink-400',
   },
 ];
 
 export default function WhyUsSection() {
   return (
-    <section id="why-us" className="section-padding bg-[#f8fafc]">
-      <div className="container-max">
+    <section id="why-us" className="py-24 px-4 sm:px-6 md:px-12 lg:px-20 bg-[#f8fafc] overflow-x-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2563b0]/8 text-[#2563b0] text-sm font-semibold mb-5 border border-[#2563b0]/15">
-            Why Choose Us
+            Why Virtualy Labs
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#040d1a] mb-5 leading-tight">
-            Why Clients Choose{' '}
-            <span className="text-gradient">Our Team</span>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-[#040d1a] mb-5 leading-tight">
+            Why Businesses Choose{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #2563eb, #0ea5e9)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Virtualy Labs
+            </span>
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            Eight reasons why leading businesses trust us to build and scale their digital products.
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            We combine technical expertise, business understanding, and architecture-first thinking to deliver software that lasts.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reasons.map(({ icon: Icon, title, description }, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reasons.map(({ icon: Icon, title, desc, number, color }, i) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.07, duration: 0.5 }}
-              className="card-hover group p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:border-[#2563b0]/20"
+              transition={{ delay: i * 0.09, duration: 0.55 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="group relative p-7 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-slate-200 transition-all duration-300 overflow-hidden cursor-default"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2563b0]/10 to-[#0ea5c8]/10 flex items-center justify-center mb-5 group-hover:from-[#2563b0]/20 group-hover:to-[#0ea5c8]/20 transition-all duration-300">
-                <Icon className="w-6 h-6 text-[#2563b0]" />
+              {/* Step number watermark */}
+              <div
+                className="absolute top-4 right-5 text-6xl font-black leading-none select-none pointer-events-none"
+                style={{ color: 'rgba(37,99,176,0.04)' }}
+              >
+                {number}
               </div>
-              <h3 className="text-base font-semibold text-[#040d1a] mb-3 leading-snug">{title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">{description}</p>
+              <div className="relative z-10">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform duration-300`}>
+                  <Icon className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-[16px] font-bold text-[#040d1a] mb-3 leading-snug">{title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

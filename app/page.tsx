@@ -1,15 +1,15 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import WhyUsSection from '@/components/WhyUsSection';
+import TrustedBySection from '@/components/TrustedBySection';
+import WhatWeBuildSection from '@/components/WhatWeBuildSection';
 import ServicesSection from '@/components/ServicesSection';
-import TechStackSection from '@/components/TechStackSection';
+import WhyUsSection from '@/components/WhyUsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import IndustriesSection from '@/components/IndustriesSection';
+import TechStackSection from '@/components/TechStackSection';
 import ProcessSection from '@/components/ProcessSection';
+import IndustriesSection from '@/components/IndustriesSection';
 import GlobalSection from '@/components/GlobalSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactSection from '@/components/ContactSection';
+import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -18,16 +18,16 @@ export default function Home() {
       <Navbar />
       <main style={{ overflowX: 'hidden', width: '100%' }}>
         <HeroSection />
-        <AboutSection />
-        <WhyUsSection />
+        <TrustedBySection />
+        <WhatWeBuildSection />
         <ServicesSection />
+        <WhyUsSection />
         <ProjectsSection />
         <TechStackSection />
-        <IndustriesSection />
         <ProcessSection />
+        <IndustriesSection />
         <GlobalSection />
-        <TestimonialsSection />
-        <ContactSection />
+        <FAQSection />
       </main>
       <Footer />
     </div>

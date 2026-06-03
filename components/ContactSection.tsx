@@ -54,8 +54,8 @@ export default function ContactSection() {
               Get In Touch
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#040d1a] mb-6 leading-tight">
-              Let's Turn Your Vision {' '}
-              <span className="text-gradient">Into Software</span>
+              Let's Build Something{' '}
+              <span className="text-gradient">Exceptional</span>
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-10">
               Tell us about your project and we'll schedule a free consultation to explore how we can help you build, scale, or transform your digital product.
@@ -63,9 +63,9 @@ export default function ContactSection() {
 
             <div className="space-y-5">
               {[
-                { icon: CalendarCheck, title: 'Discovery Call', desc: 'Understand your goals, technical requirements, challenges, and possible implementation approach.' },
-                { icon: Mail, title: 'Fast Response', desc: 'Most inquiries receive an initial response within one business day.' },
-                { icon: Phone, title: 'Flexible Engagement Models', desc: 'Project-based delivery, dedicated teams, consulting, or architecture guidance tailored to your needs.' },
+                { icon: CalendarCheck, title: 'Free 60-Minute Consultation', desc: 'No commitment. We explore your needs, share our thinking, and outline a realistic path forward.' },
+                { icon: Mail, title: 'Quick Response', desc: 'All inquiries are reviewed and responded to within 24 business hours.' },
+                { icon: Phone, title: 'Engagement Flexibility', desc: 'Fixed price, time & material, or dedicated team — we adapt to what works for your business.' },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563b0]/10 to-[#0ea5c8]/10 flex items-center justify-center flex-shrink-0">

@@ -53,9 +53,29 @@ const floatingElements = [
 ];
 
 export default function HeroSection() {
+  const smoothScrollTo = (target: Element, duration = 900) => {
+    const start = window.pageYOffset;
+    const targetY = target.getBoundingClientRect().top + window.pageYOffset;
+    const distance = targetY - start;
+    const startTime = performance.now();
+
+    const ease = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+
+    const animateScroll = (currentTime: number) => {
+      const elapsed = Math.min(currentTime - startTime, duration);
+      const progress = ease(elapsed / duration);
+      window.scrollTo(0, start + distance * progress);
+      if (elapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
   const handleNav = (href: string) => {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) smoothScrollTo(el, 1200);
   };
 
   return (
@@ -219,7 +239,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-3"
             >
               <button
-                onClick={() => handleNav('#faq')}
+                onClick={() => handleNav('#what-we-build')}
                 className="group flex items-center justify-center gap-2.5 px-7 py-3.5 text-white font-semibold rounded-xl text-[15px] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-400/25"
                 style={{ background: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)' }}
               >

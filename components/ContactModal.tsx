@@ -472,7 +472,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 </div>
 
                 {/* Right form panel */}
-                <div className="p-8 lg:p-10">
+                <div className="p-8 lg:p-10 mt-10">
                   {submitted ? (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.96 }}

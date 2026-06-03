@@ -150,7 +150,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main content */}
-       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-44 md:pb-28">
+       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20 pt-16 pb-16 md:pt-28 md:pb-28">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left column */}

@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar';
+import ScrollToTopOnMount from '@/components/ScrollToTopOnMount';
 import HeroSection from '@/components/HeroSection';
 import TrustedBySection from '@/components/TrustedBySection';
 import WhatWeBuildSection from '@/components/WhatWeBuildSection';
@@ -15,6 +16,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <div style={{ overflowX: 'hidden', maxWidth: '100vw', width: '100%' }}>
+      <ScrollToTopOnMount />
       <Navbar />
       <main style={{ overflowX: 'hidden', width: '100%' }}>
         <HeroSection />
